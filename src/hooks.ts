@@ -86,18 +86,19 @@ export const useStyle = (w : number, h : number, scale : number) => {
                 background 
             }
         },
-        smallSquareStyle() : CSSProperties {
+        smallSquareStyle(i : number) : CSSProperties {
             const width = `${smallSquareSize}px`
             const height = `${smallSquareSize}px`
-            const top = `${-smallSquareSize + (h / 2 - size / 2 + smallSquareSize) * sf2}px`
-            const left = `${w / 2 - smallSquareSize / 2}px`
+            const top = `${-smallSquareSize + (h / 2 - size / 2) * sf2}px`
+            const left = `${w / 2 - smallSquareSize + smallSquareSize * i}px`
+            //const border : string = `5px solid white`
             return {
                 position, 
                 width, 
                 height, 
                 top, 
                 left, 
-                background
+                background 
             }
         }
     }

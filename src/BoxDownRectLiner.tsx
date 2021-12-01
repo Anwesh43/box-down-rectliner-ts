@@ -15,9 +15,9 @@ const BoxDownRectLiner = (props : BoxDownRectLinerProps) => {
     } = useStyle(props.w, props.h, props.scale)
     return (
         <React.Fragment>
-            <div style = {boxStyle()}></div>
+            <div style = {boxStyle()} onClick = {() => props.onClick()}></div>
             <div style = {lineStyle()}></div>
-            <div style = {smallSquareStyle()}></div>
+            {[0, 1].map((i : number) => (<div key = {`box_down_liner_${i}`} style = {smallSquareStyle(i)}></div>))}
         </React.Fragment>
     )
 }
